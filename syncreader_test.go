@@ -36,8 +36,7 @@ func (p *ProgressReader) calculate(i int64) bool {
 }
 
 func TestNew(t *testing.T) {
-	//filename := "syncreader_test.go"
-	filename := "../quest/tmp/stream2.log"
+	filename := "syncreader_test.go"
 	f, err := os.Open(filename)
 	defer f.Close()
 	if err != nil {
