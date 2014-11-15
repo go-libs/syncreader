@@ -3,12 +3,14 @@
 
 SyncReader creates a reader that its reads to synchronize with first reader, similar to the `io.MultiWriter `.
 
+View the [docs][].
 
 ## APIs
 
 ### `New(readers ...io.Reader)`
 
-First reader is `source reader`, other readers read to synchronize whith first reader.
+`First reader` is `source reader`, other readers read to synchronize whith first reader.
+If `first readera` retures `EOF`, other readers also return.
 
 
 ## Usage
