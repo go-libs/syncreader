@@ -10,7 +10,7 @@ func (sr *SyncReader) Read(p []byte) (n int, err error) {
 	if len(sr.readers) > 0 {
 		n, err = sr.readers[0].Read(p)
 		for _, r := range sr.readers[1:] {
-			r.Read(p)
+			r.Read(p[:n])
 		}
 		if n > 0 || err != io.EOF {
 			return
