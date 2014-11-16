@@ -33,7 +33,7 @@ if err != nil {
   log.Fatalln(err)
 }
 
-p := progress.NewReader()
+p := progress.New()
 p.Total = fs.Size()
 p.Progress = func(c, t, e int64) {
   log.Println(c, t, e)
